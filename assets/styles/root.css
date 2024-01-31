@@ -1,0 +1,11 @@
+:root {
+    /* polices */
+    --title: "Sacramento", cursive;
+    --text: "Quicksand", sans-serif;
+
+    /* couleurs */
+    --black: #000000;
+    --fushia: #e15a8a;
+    --rose: #E4C6DF;
+    --rosepale:#f0eafc;
+}

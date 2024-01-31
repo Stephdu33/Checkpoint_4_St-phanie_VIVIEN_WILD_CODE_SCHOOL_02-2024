@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import 'root.css';
+@import 'home.css';
+
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: skyblue;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--rosepale);
 }
