@@ -1,0 +1,7 @@
+.h2-home {
+    font-family: var(--title);
+    font-size: 4rem;
+    margin-top: 0;
+    display:flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,52 @@
+<nav class="uk-navbar-container">
+	<div class="uk-container">
+		<img class="img-navbar" href="{{ asset('build/images/background_flowers') }}" alt="background">
+		<div uk-navbar>
+			<div class="uk-navbar-left">
+				<a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
+				<div class="uk-navbar-dropdown">
+					<ul class="uk-nav uk-navbar-dropdown-nav">
+
+						<li class="uk-active">
+							<a href="#">Active</a>
+						</li>
+						<li>
+							<a href="#">Qui suis-je?</a>
+						</li>
+						<li>
+							<a href="#">Mes skills</a>
+						</li>
+						<li>
+							<a href="#">Mon expérience professionnelle</a>
+						</li>
+						<li>
+							<a href="#">Mes projets</a>
+						</li>
+						<li>
+							<a href="#">Mes formations</a>
+						</li>
+						<li>
+							<a href="#">Contactez-moi</a>
+						</li>
+						{% if app.user  %}
+							<li>
+								<a href="#">Mon dashboard</a>
+							</li>
+							<li>
+								<a href="#">Déconnexion</a>
+							</li>
+						{% endif %}
+						<li>
+							<a href="#">Connexion</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="h1-navbar">
+				<h1 class="h1-navbar-text">Stéphanie Vivien</h1>
+				<h2 class="h2-navbar-text">Développeuse</h2>
+			</div>
+			<img class='avatar' src="{{ asset('build/images/avatar.png')}}" alt="Mon avatar" width='100rem'>
+		</div>
+	</div>
+</nav>

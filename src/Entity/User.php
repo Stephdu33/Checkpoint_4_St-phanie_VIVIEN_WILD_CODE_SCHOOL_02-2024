@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
@@ -33,6 +35,14 @@ class User
 
     #[ORM\Column(length: 500)]
     private ?string $job = null;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Skill::class)]
+    private Collection $skills;
+
+    public function __construct()
+    {
+        $this->skills = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -119,6 +129,36 @@ class User
     public function setJob(string $job): static
     {
         $this->job = $job;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Skill>
+     */
+    public function getSkills(): Collection
+    {
+        return $this->skills;
+    }
+
+    public function addSkill(Skill $skill): static
+    {
+        if (!$this->skills->contains($skill)) {
+            $this->skills->add($skill);
+            $skill->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSkill(Skill $skill): static
+    {
+        if ($this->skills->removeElement($skill)) {
+            // set the owning side to null (unless already changed)
+            if ($skill->getUser() === $this) {
+                $skill->setUser(null);
+            }
+        }
 
         return $this;
     }
