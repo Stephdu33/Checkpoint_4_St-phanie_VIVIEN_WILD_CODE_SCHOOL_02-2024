@@ -1,23 +1,29 @@
 .uk-navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-content: stretch;
     width: 100%;
 }
 
-.uk-container {
+.bloc {
     background-image: url('../images/backgroundflowers.jpg');
     background-size:cover;
 }
 
 .uk-navbar-dropdown.uk-drop {
     background-color: var(--fushia);
-    border-radius: 10px;
+    border-radius: 15px;
+    width: 22rem;
+}
+
+.uk-navbar-dropdown-nav>li>a  {
+    font-size: 1.5rem;
+    color: var(--black);
 }
 
 .h1-navbar-text {
     font-family: var(--title);
-    font-size: 5rem;
+    font-size: 6rem;
 }
 
 .h2-navbar-text {
