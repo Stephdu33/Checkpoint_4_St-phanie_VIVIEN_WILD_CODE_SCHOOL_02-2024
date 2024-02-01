@@ -1,0 +1,32 @@
+.footer-bloc {
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--fushia);
+}
+
+.h3-footer-1 {
+    font-family: var(--title);
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--black);
+}
+
+.h3-footer-2 {
+    font-family: var(--text);
+    font-size: 1.5rem;
+    margin-top: 0;
+    color: var(--black);
+    margin-left: 3rem;
+}
+
+.lnkedin {
+margin-left: 3rem;
+}
+
+.btn.btn-default {
+    font-family: var(--text);
+    text-decoration: none;
+    color: var(--black);
+}
