@@ -14,14 +14,20 @@ class Education
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 500)]
+    #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[ORM\Column(length: 500)]
+    private ?string $description = null;
+
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $date = null;
+    private ?\DateTimeInterface $year = null;
 
     #[ORM\Column(length: 500)]
     private ?string $school = null;
+
+    #[ORM\ManyToOne(inversedBy: 'education')]
+    private ?User $user = null;
 
     public function getId(): ?int
     {
@@ -40,14 +46,26 @@ class Education
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDescription(): ?string
     {
-        return $this->date;
+        return $this->description;
     }
 
-    public function setDate(\DateTimeInterface $date): static
+    public function setDescription(string $description): static
     {
-        $this->date = $date;
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getYear(): ?\DateTimeInterface
+    {
+        return $this->year;
+    }
+
+    public function setYear(\DateTimeInterface $year): static
+    {
+        $this->year = $year;
 
         return $this;
     }
@@ -60,6 +78,18 @@ class Education
     public function setSchool(string $school): static
     {
         $this->school = $school;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }
