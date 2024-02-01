@@ -16,9 +16,11 @@
     width: 22rem;
 }
 
-.uk-navbar-dropdown-nav>li>a  {
+.uk-navbar-dropdown-nav>li>a {
     font-size: 1.5rem;
-    color: var(--black);
+    color: var(--rosepale);
+    font-weight: bold;
+    font-family: var(--text);
 }
 
 .h1-navbar-text {
