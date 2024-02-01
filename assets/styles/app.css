@@ -3,7 +3,7 @@
 @import 'root.css';
 @import 'home.css';
 @import '_navbar.css';
-
+@import '_footer.css';
 
 body {
     background-color: var(--rosepale);
