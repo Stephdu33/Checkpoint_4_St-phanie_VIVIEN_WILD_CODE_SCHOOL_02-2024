@@ -19,6 +19,9 @@ class Language
     #[ORM\Column(length: 255)]
     private ?string $level = null;
 
+    #[ORM\ManyToOne(inversedBy: 'language')]
+    private ?User $user = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class Language
     public function setLevel(string $level): static
     {
         $this->level = $level;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }

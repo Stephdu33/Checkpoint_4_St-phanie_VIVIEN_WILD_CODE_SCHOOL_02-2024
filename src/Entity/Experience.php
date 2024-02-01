@@ -16,14 +16,17 @@ class Experience
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 500)]
-    private ?string $job = null;
-
     #[ORM\Column(length: 255)]
     private ?string $company = null;
 
+    #[ORM\Column(length: 500)]
+    private ?string $job = null;
+
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $startyear = null;
+
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $endyear = null;
 
     #[ORM\ManyToMany(targetEntity: Skill::class, mappedBy: 'experience')]
     private Collection $skills;
@@ -38,18 +41,6 @@ class Experience
         return $this->id;
     }
 
-    public function getJob(): ?string
-    {
-        return $this->job;
-    }
-
-    public function setJob(string $job): static
-    {
-        $this->job = $job;
-
-        return $this;
-    }
-
     public function getCompany(): ?string
     {
         return $this->company;
@@ -62,6 +53,18 @@ class Experience
         return $this;
     }
 
+    public function getJob(): ?string
+    {
+        return $this->job;
+    }
+
+    public function setJob(string $job): static
+    {
+        $this->job = $job;
+
+        return $this;
+    }
+
     public function getStartyear(): ?\DateTimeInterface
     {
         return $this->startyear;
@@ -70,6 +73,18 @@ class Experience
     public function setStartyear(\DateTimeInterface $startyear): static
     {
         $this->startyear = $startyear;
+
+        return $this;
+    }
+
+    public function getEndyear(): ?\DateTimeInterface
+    {
+        return $this->endyear;
+    }
+
+    public function setEndyear(\DateTimeInterface $endyear): static
+    {
+        $this->endyear = $endyear;
 
         return $this;
     }
