@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 class User
 {
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -27,14 +28,14 @@ class User
     #[ORM\Column(length: 255)]
     private ?string $localisation = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $linkedin = null;
-
     #[ORM\Column(length: 1000)]
     private ?string $description = null;
 
     #[ORM\Column(length: 500)]
     private ?string $job = null;
+
+    #[ORM\Column]
+    private array $roles = [];
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Skill::class)]
     private Collection $skills;
@@ -97,18 +98,6 @@ class User
         return $this;
     }
 
-    public function getLinkedin(): ?string
-    {
-        return $this->linkedin;
-    }
-
-    public function setLinkedin(?string $linkedin): static
-    {
-        $this->linkedin = $linkedin;
-
-        return $this;
-    }
-
     public function getDescription(): ?string
     {
         return $this->description;
@@ -159,6 +148,25 @@ class User
                 $skill->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): static
+    {
+        $this->roles = $roles;
 
         return $this;
     }
