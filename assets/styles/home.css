@@ -5,3 +5,12 @@
     display:flex;
     justify-content: space-around;
 }
+
+.h3-home {
+    font-family: var(--title);
+    font-size: 3rem;
+    margin-top: 0;
+    display:flex;
+    justify-content: space-around;
+}
+
