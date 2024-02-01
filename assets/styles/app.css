@@ -4,6 +4,7 @@
 @import 'home.css';
 @import '_navbar.css';
 @import '_footer.css';
+@import 'security.css';
 
 body {
     background-color: var(--rosepale);

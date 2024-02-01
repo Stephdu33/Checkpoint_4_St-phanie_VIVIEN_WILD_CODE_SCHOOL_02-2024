@@ -25,14 +25,17 @@ class Contact
     #[ORM\Column]
     private ?int $phonenumber = null;
 
+    #[ORM\Column(length: 1000)]
+    private ?string $message = null;
+
     #[ORM\Column(length: 255)]
     private ?string $company = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $job = null;
 
-    #[ORM\Column(length: 1000)]
-    private ?string $message = null;
+    #[ORM\OneToOne(mappedBy: 'contact', cascade: ['persist', 'remove'])]
+    private ?Meeting $meeting = null;
 
     public function getId(): ?int
     {
@@ -87,6 +90,18 @@ class Contact
         return $this;
     }
 
+    public function getMessage(): ?string
+    {
+        return $this->message;
+    }
+
+    public function setMessage(string $message): static
+    {
+        $this->message = $message;
+
+        return $this;
+    }
+
     public function getCompany(): ?string
     {
         return $this->company;
@@ -111,14 +126,24 @@ class Contact
         return $this;
     }
 
-    public function getMessage(): ?string
+    public function getMeeting(): ?Meeting
     {
-        return $this->message;
+        return $this->meeting;
     }
 
-    public function setMessage(string $message): static
+    public function setMeeting(?Meeting $meeting): static
     {
-        $this->message = $message;
+        // unset the owning side of the relation if necessary
+        if ($meeting === null && $this->meeting !== null) {
+            $this->meeting->setContact(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($meeting !== null && $meeting->getContact() !== $this) {
+            $meeting->setContact($this);
+        }
+
+        $this->meeting = $meeting;
 
         return $this;
     }
