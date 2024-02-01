@@ -12,33 +12,33 @@
 				<div class="uk-navbar-dropdown">
 					<ul class="uk-nav uk-navbar-dropdown-nav">
 						<li>
-							<a href="#Qui suis-je">Qui suis-je?</a>
+							<a href="#Qui suis-je" class="text-menu">Qui suis-je?</a>
 						</li>
 						<li>
-							<a href="#Mes skills">Mes skills</a>
+							<a href="#Mes skills" class="text-menu">Mes skills</a>
 						</li>
 						<li>
-							<a href="#Mon expérience professionnelle">Mon expérience professionnelle</a>
+							<a href="#Mon expérience professionnelle" class="text-menu">Mon expérience professionnelle</a>
 						</li>
 						<li>
-							<a href="#Mes projets">Mes projets</a>
+							<a href="#Mes projets" class="text-menu">Mes projets</a>
 						</li>
 						<li>
-							<a href="#Mes formations">Mes formations</a>
+							<a href="#Mes formations" class="text-menu">Mes formations</a>
 						</li>
 						<li>
-							<a href="#Contactez-moi">Contactez-moi</a>
+							<a href="#Contactez-moi" class="text-menu">Contactez-moi</a>
 						</li>
 						{% if app.user  %}
 							<li>
-								<a href="#">Mon dashboard</a>
+								<a href="#" class="text-menu">Mon dashboard</a>
 							</li>
 							<li>
-								<a href="{{ path('app_logout')}}">Déconnexion</a>
+								<a href="{{ path('app_logout')}}" class="text-menu">Déconnexion</a>
 							</li>
 						{% endif %}
 						<li>
-							<a href="{{ path('app_login')}}">Connexion</a>
+							<a href="{{ path('app_login')}}" class="text-menu">Connexion</a>
 						</li>
 					</ul>
 				</div>
