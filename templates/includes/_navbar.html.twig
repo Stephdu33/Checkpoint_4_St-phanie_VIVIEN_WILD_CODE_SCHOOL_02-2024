@@ -36,10 +36,11 @@
 							<li>
 								<a href="{{ path('app_logout')}}" class="text-menu">Déconnexion</a>
 							</li>
+						{% else %}
+							<li>
+								<a href="{{ path('app_login')}}" class="text-menu">Connexion</a>
+							</li>
 						{% endif %}
-						<li>
-							<a href="{{ path('app_login')}}" class="text-menu">Connexion</a>
-						</li>
 					</ul>
 				</div>
 			</div>
