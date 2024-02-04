@@ -1,8 +1,3 @@
-.details, main {
-    display: flex;
-    justify-content: center;
-}
-
 .container-skill {
     width: 60rem;
     height: 40rem;
@@ -16,39 +11,38 @@
 .h1-skills {
     font-family: var(--title);
     font-size: 5rem;
-    margin-top: 0;
+    padding-top: 2rem;
     display:flex;
     justify-content: center;
 }
 
-.form-new-skill {
+.form-new-skill-block {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    justify-content: center;
+} 
 
 .form-new-skill-name {
-    font-family: var(--text);
-    font-size: 2rem;
-    color:var(--black);
-}
-
-.form-new-skill-category {
-    font-family: var(--text);
-    font-size: 2rem;
-    color:var(--black);
-}
-
-/* .form-control {
-    width: 40rem;
+    width: 30rem;
     height: 4rem;
     border-radius: 50px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 2rem;
     border: none;
-} */
+    background-color: var(--rose);
+}
 
-.button#skill_submit {
+.form-new-skill-category {
+    width: 30rem;
+    height: 4rem;
+    border-radius: 50px;
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
+    font-size: 2rem;
+    border: none;
+    background-color: var(--rose);
+}
+
+
+.form-new-skill-submit {
     border-radius: 50px;
     width: 15rem;
     height: 4rem;
