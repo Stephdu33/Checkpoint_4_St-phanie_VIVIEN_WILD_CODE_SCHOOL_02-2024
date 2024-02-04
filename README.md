@@ -130,8 +130,11 @@ NB : partie function logout : on peut faire un render vers le formulaire de co
 -création fixture associée à l’entité
 -mise en forme du template index de l'entité
 
-CRUD:
+-CRUD:
 - make:form
 - insertion du form dans le template
-- fichier new.html.twig
-- fichier delete.html.twig
+- new, update/edit, delete
+- mise en page
+- routes
+
+-dashboard
