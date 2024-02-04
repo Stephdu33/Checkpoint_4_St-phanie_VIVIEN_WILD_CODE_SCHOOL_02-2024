@@ -6,9 +6,10 @@
     justify-content: center;
 }
 
-.new-skill{
+.block-skill-button {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .new-skill-link {
@@ -22,6 +23,25 @@
     padding: 10px;
 }
 
+.link-come-back-button {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1rem;
+}
+
+.link-come-back {
+    border-radius: 50px;
+    width: 10rem;
+    height: 2rem;
+    background-color: var(--jaune);
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--fushia);
+    margin-top: 5rem;
+    font-family: var(--text);
+    font-size: 1rem;
+    border: none; 
+    text-align: center;
+} 
+
 .table-skills-block {
     display: flex;
     flex-direction: column;
@@ -33,7 +53,7 @@
     align-items: center;
     margin-top: 5rem;
     margin-bottom: 10rem;
-    border-radius: 50px;
+    border-radius: 30px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     background-color: var(--rose);
 }
@@ -45,20 +65,20 @@
     border-spacing: 0.2rem;
     font-family: var(--text);
     font-size: 1.5rem;
-    border-radius: 50px;
+    border-radius: 30px;
     border-spacing: 8px;
 }
 
 .th-skills {
     text-align: center;
     background-color: white;
-    border-radius: 50px;
+    border-radius: 30px;
     vertical-align: middle;
 }
 
 .tr-skills {
     text-align: center;
     background-color: white;
-    border-radius: 50px;
+    border-radius: 30px;
 }
 

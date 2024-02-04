@@ -34,14 +34,14 @@
 						</li>
 						{% if app.user  %}
 							<li>
-								<a href="#" class="text-menu">Mon dashboard</a>
+								<a href="{{ path('app_dashboard') }}" class="text-menu">Mon dashboard</a>
 							</li>
 							<li>
-								<a href="{{ path('app_logout')}}" class="text-menu">Déconnexion</a>
+								<a href="{{ path('app_logout') }}" class="text-menu">Déconnexion</a>
 							</li>
 						{% else %}
 							<li>
-								<a href="{{ path('app_login')}}" class="text-menu">Connexion</a>
+								<a href="{{ path('app_login') }}" class="text-menu">Connexion</a>
 							</li>
 						{% endif %}
 					</ul>

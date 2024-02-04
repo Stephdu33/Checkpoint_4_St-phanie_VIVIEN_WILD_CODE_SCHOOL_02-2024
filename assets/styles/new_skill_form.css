@@ -1,4 +1,13 @@
+.block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .container-skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 60rem;
     height: 40rem;
     margin-top: 10rem;
@@ -14,14 +23,10 @@
     padding-top: 2rem;
     display:flex;
     justify-content: center;
+    align-items: center;
 }
 
-.form-new-skill-block {
-    display: flex;
-    justify-content: center;
-} 
-
-.form-new-skill-name {
+input#skill_name {
     width: 30rem;
     height: 4rem;
     border-radius: 50px;
@@ -29,9 +34,12 @@
     font-size: 2rem;
     border: none;
     background-color: var(--rose);
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
-.form-new-skill-category {
+input#skill_category {
     width: 30rem;
     height: 4rem;
     border-radius: 50px;
@@ -39,10 +47,13 @@
     font-size: 2rem;
     border: none;
     background-color: var(--rose);
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
 
-.form-new-skill-submit {
+button#skill_submit {
+    margin-left:8rem;
     border-radius: 50px;
     width: 15rem;
     height: 4rem;
@@ -52,4 +63,25 @@
     font-family: var(--text);
     font-size: 1.5rem;
     border: none;
+    text-align: center;
+
+}
+
+.link-come-back-button {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1rem;
+}
+
+.link-come-back {
+    border-radius: 50px;
+    width: 10rem;
+    height: 2rem;
+    background-color: var(--jaune);
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--fushia);
+    margin-top: 5rem;
+    font-family: var(--text);
+    font-size: 1rem;
+    border: none; 
+    text-align: center;
 }

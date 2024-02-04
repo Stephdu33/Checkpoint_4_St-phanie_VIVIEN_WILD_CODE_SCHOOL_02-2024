@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	- Accueil Dashboard
+{% endblock %}
+
+{% block body %}
+	<body class="body-dashboard">
+
+		<div class="titles-dashboard">
+			<h1 class="h1-dashboard">Accueil Dashboard</h1>
+			<h2 class="h2-dashboard">Salut Steph et bienvenue sur ta page de gestion de site!</h2>
+		</div>
+
+		<div class="buttons-dashboard">
+			<div class="block-dashboard">
+				<a href="{{ path('app_skill') }}" class="text-btn-dashboard">Mise à jour des skills</a>
+			</div>
+			<div class="block-dashboard">
+				<a href="" class="text-btn-dashboard">Mise à jour des Projets</a>
+			</div>
+			<div class="block-dashboard">
+				<a href="" class="text-btn-dashboard">Mise à jour de mes informations personnelles</a>
+			</div>
+			<div class="block-dashboard">
+				<a href="" class="text-btn-dashboard">Mise à jour de mes formations</a>
+			</div>
+			<div class="block-dashboard">
+				<a href="" class="text-btn-dashboard">Mise à jour de mes expériences</a>
+			</div>
+			<div class="block-dashboard">
+				<a href="" class="text-btn-dashboard">Mise à jour de mes images</a>
+			</div>
+			<div class="block-dashboard">
+				<a href="" class="text-btn-dashboard">Mise à jour de mes langues</a>
+			</div>
+			<div class="block-dashboard">
+				<a href="" class="text-btn-dashboard">Accès à mes rendez-vous</a>
+			</div>
+			<div class="block-dashboard">
+				<a href="" class="text-btn-dashboard">Accès à mes recommandations</a>
+			</div>
+			<div class="block-dashboard">
+				<a href="" class="text-btn-dashboard">Accès à mes contacts</a>
+			</div>
+		</div>
+	</body>
+{% endblock %}
