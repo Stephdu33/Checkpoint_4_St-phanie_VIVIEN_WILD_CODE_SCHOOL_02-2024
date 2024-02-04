@@ -138,3 +138,5 @@ NB : partie function logout : on peut faire un render vers le formulaire de co
 - routes
 
 -dashboard
+
+-pas eu le temps de terminer l'objectif suivant : affichage dynamique des informations 
