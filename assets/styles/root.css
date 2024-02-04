@@ -1,11 +1,12 @@
 :root {
     /* polices */
-    --title: "Sacramento", cursive;
+    --title: "Sacramento";
     --text: "Quicksand", sans-serif;
 
     /* couleurs */
-    --black: #000000;
-    --fushia: #e15a8a;
-    --rose: #E4C6DF;
+    --black: #000;
+    --fushia: #e5709f;
+    --rose: #EFA9C5;
     --rosepale:#f0eafc;
+    --jaune:#ffcf4e;
 }

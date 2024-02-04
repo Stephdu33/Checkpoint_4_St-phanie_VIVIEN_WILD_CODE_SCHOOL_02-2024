@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Steph!
+{% endblock %}
+
+{% block body %}
+
+	<div class="container-skill-edit">
+
+		<h1 class="h1-skills-edit">Modification des skills</h1>
+
+		{{ form_start(formSkill) }}
+
+		<div class="form-edit-skill-name">
+			{{ form_widget(formSkill.name) }}
+			<div class="form-skill-error">
+				{{ form_errors(formSkill.name) }}
+			</div>
+		</div>
+
+		<div class="form-edit-skill-category">
+			{{ form_widget(formSkill.category) }}
+		</div>
+
+		<div class="form-edit-skill-submit">
+			{{ form_row(formSkill.submit) }}
+		</div>
+
+		{{ form_end(formSkill) }}
+
+		<div class="link-come-back">
+			<a href="{{ path('app_skill') }}" class="link-come-back-button">Retour</a>
+		</div>
+
+	</div>
+{% endblock %}

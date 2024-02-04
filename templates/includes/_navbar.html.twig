@@ -1,0 +1,56 @@
+<nav class="uk-navbar-container">
+	<div class="bloc">
+
+		<div uk-navbar>
+			<img class='avatar' src="{{ asset('build/images/avatar2.png')}}" alt="Mon avatar" width='100rem'>
+			<div class="h1-navbar">
+				<h1 class="h1-navbar-text">Stéphanie Vivien</h1>
+				<h2 class="h2-navbar-text">Développeuse</h2>
+			</div>
+			<div class="uk-navbar-left">
+				<a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
+				<div class="uk-navbar-dropdown">
+					<ul class="uk-nav uk-navbar-dropdown-nav">
+						<li>
+							<a href="{{ path('app_home')}}" class="text-menu">Accueil</a>
+						</li>
+						<li>
+							<a href="#Qui suis-je" class="text-menu">Qui suis-je?</a>
+						</li>
+						<li>
+							<a href="#Mes skills" class="text-menu">Mes skills</a>
+						</li>
+						<li>
+							<a href="#Mon expérience professionnelle" class="text-menu">Mon expérience professionnelle</a>
+						</li>
+						<li>
+							<a href="#Mes projets" class="text-menu">Mes projets</a>
+						</li>
+						<li>
+							<a href="#Mes formations" class="text-menu">Mes formations</a>
+						</li>
+						<li>
+							<a href="#Contactez-moi" class="text-menu">Contactez-moi</a>
+						</li>
+						{% if app.user  %}
+							<li>
+								<a href="{{ path('app_dashboard') }}" class="text-menu">Mon dashboard</a>
+							</li>
+							<li>
+								<a href="{{ path('app_logout') }}" class="text-menu">Déconnexion</a>
+							</li>
+						{% else %}
+							<li>
+								<a href="{{ path('app_login') }}" class="text-menu">Connexion</a>
+							</li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+
+
+		</div>
+
+
+	</div>
+</nav>

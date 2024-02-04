@@ -2,18 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 @import 'root.css';
 @import 'home.css';
-
-
-*,
-::before,
-::after {
-    margin: 0;
-    padding: 0;
-}
+@import '_navbar.css';
+@import '_footer.css';
+@import 'security.css';
+@import 'skill.css';
+@import 'new_skill_form.css';
+@import 'dashboard.css';
 
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
     background-color: var(--rosepale);
+}
+
+* {
+    padding: 0;
+    margin: 0;
 }

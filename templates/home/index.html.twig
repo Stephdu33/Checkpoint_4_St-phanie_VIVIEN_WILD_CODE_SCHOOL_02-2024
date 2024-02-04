@@ -1,12 +1,59 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!
+{% block title %}Portfolio de Stéphanie VIVIEN
 {% endblock %}
 
 {% block body %}
+	<div class="blocks-home">
 
-	<div class="example-wrapper">
-		<h1>Hello</h1>
+		<section class="about-me-home" id="Qui suis-je">
+			<h2 class="h2-home">Qui suis-je?</h2>
+			<p class="about-me-home-text"></p>
+		</section>
 
+		<section class="hardskill-home-bloc" id="Mes skills">
+			<h2 class="h2-home">Mes Hard Skills et Tools</h2>
 
-	{% endblock %}
+			<div
+				class="boucle-skills-home">{# {% for skill in skills %}
+										{{ skill.name }}
+									{% endfor %} #}
+			</div>
+
+			<section class="language-home-bloc">
+				<h3 class="h3-home">Langues étrangères</h3>
+				<div
+					class="boucle-languages-home">{# {% for language in languages %}
+											{{ language.name }}
+										{% endfor %} #}
+				</div>
+			</section>
+		</section>
+
+		<section class="softskill-home-bloc">
+			<h2 class="h2-home">Mes Soft Skills</h2>
+			<div
+				class="boucle-softskills-home">{# {% for softskill in softskills %}
+										{{ softskill.name }}
+									{% endfor %} #}
+			</div>
+		</section>
+
+		<section class="experience-home-bloc" id="Mon expérience professionnelle">
+			<h2 class="h2-home">Mes expériences professionnelles</h2>
+		</section>
+
+		<section class="work-home-bloc" id="Mes projets">
+			<h2 class="h2-home">Mes projets</h2>
+		</section>
+
+		<section class="education-home-bloc" id="Mes formations">
+			<h2 class="h2-home">Mes formations</h2>
+		</section>
+
+		<section class="contact-home-bloc" id="Contactez-moi">
+			<h2 class="h2-home">Contactez-moi</h2>
+		</section>
+
+	</div>
+{% endblock %}
