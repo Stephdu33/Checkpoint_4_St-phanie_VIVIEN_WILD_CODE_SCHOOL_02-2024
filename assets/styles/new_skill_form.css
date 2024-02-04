@@ -1,47 +1,54 @@
-.form-login {
+.details, main {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
+}
+
+.container-skill {
     width: 60rem;
     height: 40rem;
-    align-items: center;
-    margin-left: 40rem;
-    margin-top: 15rem;
+    margin-top: 10rem;
     margin-bottom: 15rem;
     border-radius: 50px;
     box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
     background-image: url('../images/backgroundflowers.jpg');
 }
 
-.h3.mb-3.font-weight-normal {
+.h1-skills {
     font-family: var(--title);
     font-size: 5rem;
     margin-top: 0;
+    display:flex;
+    justify-content: center;
 }
 
-.form-block {
+.form-new-skill {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.text-input-form-login {
+.form-new-skill-name {
     font-family: var(--text);
     font-size: 2rem;
     color:var(--black);
 }
 
-.form-control {
+.form-new-skill-category {
+    font-family: var(--text);
+    font-size: 2rem;
+    color:var(--black);
+}
+
+/* .form-control {
     width: 40rem;
     height: 4rem;
     border-radius: 50px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 2rem;
     border: none;
-}
+} */
 
-.btn.btn-lg.btn-primary {
+.button#skill_submit {
     border-radius: 50px;
     width: 15rem;
     height: 4rem;

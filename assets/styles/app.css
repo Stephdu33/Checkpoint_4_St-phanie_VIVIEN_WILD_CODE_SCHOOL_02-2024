@@ -6,6 +6,7 @@
 @import '_footer.css';
 @import 'security.css';
 @import 'skill.css';
+@import 'new_skill_form.css';
 
 body {
     background-color: var(--rosepale);

@@ -1,8 +1,14 @@
+.blocks-home {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
 .h2-home {
     font-family: var(--title);
     font-size: 4rem;
-    margin-top: 0;
-    display:flex;
+    margin-top: 2rem;
+    display: flex;
     justify-content: space-around;
 }
 
@@ -10,7 +16,112 @@
     font-family: var(--title);
     font-size: 3rem;
     margin-top: 0;
-    display:flex;
+    display: flex;
     justify-content: space-around;
 }
 
+.about-me-home {
+    display: flex;
+    justify-content: center;
+    width: 60rem;
+    height: 40rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    border-radius: 50px;
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
+    background-color: var(--rose);
+    background-image: url('../images/backgroundflowers.jpg');
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.hardskill-home-bloc {
+    display: flex;
+    justify-content:space-between;
+    flex-direction: column;
+    width: 80rem;
+    height: 60rem;
+    margin-bottom: 5rem;
+    border-radius: 50px;
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
+    background-image: url('../images/backgroundflowers.jpg');
+    background-size: cover;
+    opacity: 0.7;
+}
+
+
+.language-home-bloc {
+    width: 30rem;
+    height: 20rem;
+    border-radius: 50px;
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
+    background-color: var(--rose);
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.softskill-home-bloc {
+    display: flex;
+    justify-content: center;
+    width: 80rem;
+    height: 60rem;
+    margin-bottom: 5rem;
+    border-radius: 50px;
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
+    background-image: url('../images/backgroundflowers.jpg');
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.experience-home-bloc {
+    display: flex;
+    justify-content: center;
+    width: 80rem;
+    height: 60rem;
+    margin-bottom: 5rem;
+    border-radius: 50px;
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
+    background-image: url('../images/backgroundflowers.jpg');
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.work-home-bloc {
+    display: flex;
+    justify-content: center;
+    width: 80rem;
+    height: 60rem;
+    margin-bottom: 5rem;
+    border-radius: 50px;
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
+    background-image: url('../images/backgroundflowers.jpg');
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.education-home-bloc {
+    display: flex;
+    justify-content: center;
+    width: 80rem;
+    height: 60rem;
+    margin-bottom: 5rem;
+    border-radius: 50px;
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
+    background-image: url('../images/backgroundflowers.jpg');
+    background-size: cover;
+    opacity: 0.7;
+ 
+}
+
+.contact-home-bloc {
+    display: flex;
+    justify-content: center;
+    width: 80rem;
+    height: 60rem;
+    margin-bottom: 5rem;
+    border-radius: 50px;
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
+    background-image: url('../images/backgroundflowers.jpg');
+    background-size: cover;
+    opacity: 0.7;
+}

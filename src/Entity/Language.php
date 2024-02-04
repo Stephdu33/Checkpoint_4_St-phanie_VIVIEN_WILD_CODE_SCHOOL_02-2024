@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\LanguageRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\LanguageRepository;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: LanguageRepository::class)]
+#[UniqueEntity('name')]
 class Language
 {
     #[ORM\Id]
