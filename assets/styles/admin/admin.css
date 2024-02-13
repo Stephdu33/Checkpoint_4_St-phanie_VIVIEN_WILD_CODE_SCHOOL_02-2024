@@ -1,12 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-@import 'root.css';
-@import 'home.css';
-@import '_navbar.css';
-@import '_footer.css';
-@import 'security.css';
-
-
+@import '../root.css';
+@import 'admin_skill.css';
+@import 'admin_new_skill_form.css';
+@import 'admin_dashboard.css';
 
 body {
     background-color: var(--rosepale);

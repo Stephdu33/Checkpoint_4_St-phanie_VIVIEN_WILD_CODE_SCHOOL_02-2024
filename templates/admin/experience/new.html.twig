@@ -1,0 +1,12 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}New Experience
+{% endblock %}
+
+{% block body %}
+	<h1>Create new Experience</h1>
+
+	{{ include('admin/experience/_form.html.twig') }}
+
+	<a href="{{ path('app_admin_experience_index') }}">back to list</a>
+{% endblock %}

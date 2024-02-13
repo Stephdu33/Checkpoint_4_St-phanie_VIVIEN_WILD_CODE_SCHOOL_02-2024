@@ -14,7 +14,7 @@
     margin-bottom: 15rem;
     border-radius: 50px;
     box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
-    background-image: url('../images/backgroundflowers.jpg');
+    background-image: url('../../images/backgroundflowers.jpg');
 }
 
 .h1-skills {

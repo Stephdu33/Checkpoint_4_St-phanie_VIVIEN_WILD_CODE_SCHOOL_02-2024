@@ -1,0 +1,42 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Experience index
+{% endblock %}
+
+{% block body %}
+	<h1>Experience index</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Company</th>
+				<th>Job</th>
+				<th>Startyear</th>
+				<th>Endyear</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for experience in experiences %}
+				<tr>
+					<td>{{ experience.id }}</td>
+					<td>{{ experience.company }}</td>
+					<td>{{ experience.job }}</td>
+					<td>{{ experience.startyear ? experience.startyear|date('Y-m-d') : '' }}</td>
+					<td>{{ experience.endyear ? experience.endyear|date('Y-m-d') : '' }}</td>
+					<td>
+						<a href="{{ path('app_admin_experience_show', {'id': experience.id}) }}">show</a>
+						<a href="{{ path('app_admin_experience_edit', {'id': experience.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="6">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('app_admin_experience_new') }}">Create new</a>
+{% endblock %}

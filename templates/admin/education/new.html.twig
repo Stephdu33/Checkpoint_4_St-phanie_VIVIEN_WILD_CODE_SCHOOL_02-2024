@@ -1,0 +1,12 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}New Education
+{% endblock %}
+
+{% block body %}
+	<h1>Create new Education</h1>
+
+	{{ include('admin/education/_form.html.twig') }}
+
+	<a href="{{ path('app_admin_education_index') }}">back to list</a>
+{% endblock %}

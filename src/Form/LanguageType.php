@@ -2,31 +2,31 @@
 
 namespace App\Form;
 
-use App\Entity\Contact;
-use App\Entity\Meeting;
+use App\Entity\Language;
+use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ContactType extends AbstractType
+class LanguageType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('firstname')
-            ->add('lastname')
-            ->add('email')
-            ->add('phonenumber')
-            ->add('message')
-            ->add('company')
-            ->add('job');
+            ->add('name')
+            ->add('level')
+            ->add('user', EntityType::class, [
+                'class' => User::class,
+'choice_label' => 'id',
+            ])
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Contact::class,
+            'data_class' => Language::class,
         ]);
     }
 }

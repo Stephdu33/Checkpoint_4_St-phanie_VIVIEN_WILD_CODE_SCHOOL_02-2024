@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\Skill;
 use App\Form\SkillType;
@@ -11,21 +11,22 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+#[Route('/skill', name: 'app_admin_skill_')]
 class SkillController extends AbstractController
 {
     // This controller show skills with a list //
-    #[Route('/skill', name: 'app_skill')]
+    #[Route('/', name: 'index')]
     public function index(SkillRepository $skillRepository): Response
     {
         $skills = $skillRepository->findAll();
 
-        return $this->render('skill/index.html.twig', [
+        return $this->render('admin/skill/index.html.twig', [
             'skills' => $skills,
         ]);
     }
 
     // This controller add skills with a form //
-    #[Route('/skill/new', name: 'app_skill_new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $skill = new Skill();
@@ -40,17 +41,17 @@ class SkillController extends AbstractController
                 'notice',
                 'Ton skill a été enregistré'
             );
-            return $this->redirectToRoute('app_skill', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_admin_skill_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('/skill/new.html.twig', [
+        return $this->render('admin/skill/new.html.twig', [
             'skill' => $skill,
             'formSkill' => $formSkill->createView(),
         ]);
     }
 
     // This controller update skills with a form //
-    #[Route('/skill/{id}/edit', name: 'app_skill_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(
         Skill $skill,
         Request $request,
@@ -67,21 +68,21 @@ class SkillController extends AbstractController
                 'Ton skill a été mis à jour'
             );
 
-            return $this->redirectToRoute('app_skill', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_admin_skill_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('/skill/new.html.twig', [
+        return $this->render('admin/skill/new.html.twig', [
             'skill' => $skill,
             'formSkill' => $formSkill->createView(),
         ]);
 
-        return $this->render('/skill/edit.html.twig', [
+        return $this->render('admin/skill/edit.html.twig', [
             'formSkill' => $formSkill->createView(),
         ]);
     }
 
     // This controller delete skills //
-    #[Route('/skill/{id}/delete', name: 'app_skill_delete', methods: ['GET'])]
+    #[Route('/{id}/delete', name: 'delete', methods: ['GET'])]
     public function delete(EntityManagerInterface $entityManager, Skill $skill): Response
     {
         $entityManager->remove($skill);
@@ -92,6 +93,6 @@ class SkillController extends AbstractController
             'Ton skill a bien été supprimé'
         );
 
-        return $this->redirectToRoute('app_skill');
+        return $this->redirectToRoute('app_admin_skill_index');
     }
 }

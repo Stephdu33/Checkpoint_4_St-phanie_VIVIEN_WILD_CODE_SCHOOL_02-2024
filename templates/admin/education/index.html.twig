@@ -1,0 +1,42 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Education index
+{% endblock %}
+
+{% block body %}
+	<h1>Education index</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Title</th>
+				<th>Description</th>
+				<th>Year</th>
+				<th>School</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for education in education %}
+				<tr>
+					<td>{{ education.id }}</td>
+					<td>{{ education.title }}</td>
+					<td>{{ education.description }}</td>
+					<td>{{ education.year ? education.year|date('Y-m-d') : '' }}</td>
+					<td>{{ education.school }}</td>
+					<td>
+						<a href="{{ path('app_admin_education_show', {'id': education.id}) }}">show</a>
+						<a href="{{ path('app_admin_education_edit', {'id': education.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="6">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('app_admin_education_new') }}">Create new</a>
+{% endblock %}
