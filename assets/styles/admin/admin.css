@@ -4,6 +4,8 @@
 @import 'admin_skill.css';
 @import 'admin_new_skill_form.css';
 @import 'admin_dashboard.css';
+@import 'admin_work.css';
+@import 'admin_new_work_form.css';
 
 body {
     background-color: var(--rosepale);

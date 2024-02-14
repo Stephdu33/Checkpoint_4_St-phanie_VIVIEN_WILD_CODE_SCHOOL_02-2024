@@ -14,6 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/work', name: 'app_admin_work_')]
 class WorkController extends AbstractController
 {
+    // This controller show works with a list //
     #[Route('/', name: 'index', methods: ['GET'])]
     public function index(WorkRepository $workRepository): Response
     {
@@ -21,60 +22,69 @@ class WorkController extends AbstractController
             'works' => $workRepository->findAll(),
         ]);
     }
-
+    // This controller add works with a form //
     #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $work = new Work();
-        $form = $this->createForm(WorkType::class, $work);
-        $form->handleRequest($request);
+        $formWork = $this->createForm(WorkType::class, $work);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        $formWork->handleRequest($request);
+
+        if ($formWork->isSubmitted() && $formWork->isValid()) {
             $entityManager->persist($work);
             $entityManager->flush();
+            $this->addFlash(
+                'notice',
+                'Ton projet a été enregistré'
+            );
 
             return $this->redirectToRoute('app_admin_work_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('admin/work/new.html.twig', [
             'work' => $work,
-            'form' => $form,
+            'formWork' => $formWork->createView(),
         ]);
     }
-
-    #[Route('/{id}', name: 'show', methods: ['GET'])]
-    public function show(Work $work): Response
-    {
-        return $this->render('admin/work/show.html.twig', [
-            'work' => $work,
-        ]);
-    }
-
+    // This controller update works with a form //
     #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Work $work, EntityManagerInterface $entityManager): Response
-    {
-        $form = $this->createForm(WorkType::class, $work);
-        $form->handleRequest($request);
+    public function edit(
+        Request $request,
+        Work $work,
+        EntityManagerInterface $entityManager
+    ): Response {
+        $formWork = $this->createForm(WorkType::class, $work);
+        $formWork->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($formWork->isSubmitted() && $formWork->isValid()) {
+            $entityManager->persist($work);
             $entityManager->flush();
+            $this->addFlash(
+                'notice',
+                'Ton projet a été mis à jour'
+            );
 
             return $this->redirectToRoute('app_admin_work_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('admin/work/edit.html.twig', [
             'work' => $work,
-            'form' => $form,
+            'formWork' => $formWork->createView(),
         ]);
     }
 
+    // This controller delete works //
     #[Route('/{id}', name: 'delete', methods: ['POST'])]
-    public function delete(Request $request, Work $work, EntityManagerInterface $entityManager): Response
+    public function delete(Work $work, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $work->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($work);
-            $entityManager->flush();
-        }
+        $entityManager->remove($work);
+        $entityManager->flush();
+
+        $this->addFlash(
+            'notice',
+            'Ton projet a bien été supprimé'
+        );
 
         return $this->redirectToRoute('app_admin_work_index', [], Response::HTTP_SEE_OTHER);
     }

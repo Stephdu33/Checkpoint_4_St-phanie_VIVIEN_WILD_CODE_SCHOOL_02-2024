@@ -75,10 +75,6 @@ class SkillController extends AbstractController
             'skill' => $skill,
             'formSkill' => $formSkill->createView(),
         ]);
-
-        return $this->render('admin/skill/edit.html.twig', [
-            'formSkill' => $formSkill->createView(),
-        ]);
     }
 
     // This controller delete skills //
