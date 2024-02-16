@@ -82,3 +82,25 @@
     border-radius: 30px;
 }
 
+.pagination-skill-index {
+    display: flex;
+    flex-direction: row;
+    font-family: var(--text);
+    font-size: 1rem;
+    margin: 1rem;
+    justify-content: center;
+}
+
+.pagination-skill-index a {
+    text-decoration: none;
+    color: var(--black);
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.3rem;
+    margin-right: 4px;
+}
+
+.pagination-skill-index a:focus {
+    background-color: black;
+    color: white;
+}

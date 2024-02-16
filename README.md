@@ -139,4 +139,19 @@ NB : partie function logout : on peut faire un render vers le formulaire de co
 
 -dashboard
 
--pas eu le temps de terminer l'objectif suivant : affichage dynamique des informations 
+-CRUD USER: créer le type, les templates...
+
+-ROLE_ADMIN: 
+	*security.yaml : décommenter la ligne concernée
+	*fixtures User : ajouter :   ->setRoles(['ROLE_ADMIN']);
+	*userType : ajouter :  ->add('roles', ChoiceType::class, [
+                'multiple' => true,
+                'expanded' => false,
+                'choices' => [
+                    'Admin' => 'ROLE_ADMIN',
+                    'User' => 'ROLE_USER'
+                ]
+            ])
+
+-pagination (knp_paginator bundle)
+

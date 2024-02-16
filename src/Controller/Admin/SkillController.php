@@ -10,18 +10,26 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Knp\Component\Pager\PaginatorInterface;
 
 #[Route('/skill', name: 'app_admin_skill_')]
 class SkillController extends AbstractController
 {
     // This controller show skills with a list //
     #[Route('/', name: 'index')]
-    public function index(SkillRepository $skillRepository): Response
-    {
-        $skills = $skillRepository->findAll();
+    public function index(
+        SkillRepository $skillRepository,
+        PaginatorInterface $paginator,
+        Request $request
+    ): Response {
+        $pagination = $paginator->paginate(
+            $skillRepository->queryFindAll(),
+            $request->query->getInt('page', 1), /*page number*/
+            10 /*limit per page*/
+        );
 
         return $this->render('admin/skill/index.html.twig', [
-            'skills' => $skills,
+            'skills' => $pagination,
         ]);
     }
 
