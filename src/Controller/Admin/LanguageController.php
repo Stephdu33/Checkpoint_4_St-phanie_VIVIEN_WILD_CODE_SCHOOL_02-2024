@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+// This controller show languages with a list //
 #[Route('/language', name: 'app_admin_language_')]
 class LanguageController extends AbstractController
 {
@@ -22,59 +23,67 @@ class LanguageController extends AbstractController
         ]);
     }
 
+    // This controller add languages with a form //
     #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $language = new Language();
-        $form = $this->createForm(LanguageType::class, $language);
-        $form->handleRequest($request);
+        $formLanguage = $this->createForm(LanguageType::class, $language);
+        $formLanguage->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($formLanguage->isSubmitted() && $formLanguage->isValid()) {
             $entityManager->persist($language);
             $entityManager->flush();
+            $this->addFlash(
+                'notice',
+                'Ta langue étrangère a été enregistrée'
+            );
 
             return $this->redirectToRoute('app_admin_language_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('admin/language/new.html.twig', [
             'language' => $language,
-            'form' => $form,
+            'formLanguage' => $formLanguage->createView(),
         ]);
     }
 
-    #[Route('/{id}', name: 'show', methods: ['GET'])]
-    public function show(Language $language): Response
-    {
-        return $this->render('admin/language/show.html.twig', [
-            'language' => $language,
-        ]);
-    }
-
+    // This controller update languages with a form //
     #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Language $language, EntityManagerInterface $entityManager): Response
-    {
-        $form = $this->createForm(LanguageType::class, $language);
-        $form->handleRequest($request);
+    public function edit(
+        Request $request,
+        Language $language,
+        EntityManagerInterface $entityManager
+    ): Response {
+        $formLanguage = $this->createForm(LanguageType::class, $language);
+        $formLanguage->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($formLanguage->isSubmitted() && $formLanguage->isValid()) {
             $entityManager->flush();
+            $this->addFlash(
+                'notice',
+                'Ta langue a été mise à jour'
+            );
 
             return $this->redirectToRoute('app_admin_language_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('admin/language/edit.html.twig', [
+        return $this->render('admin/language/new.html.twig', [
             'language' => $language,
-            'form' => $form,
+            'formLanguage' => $formLanguage->createView(),
         ]);
     }
 
-    #[Route('/{id}', name: 'delete', methods: ['POST'])]
+    // This controller delete languages //
+    #[Route('/{id}', name: 'delete', methods: ['GET'])]
     public function delete(Request $request, Language $language, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $language->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($language);
-            $entityManager->flush();
-        }
+        $entityManager->remove($language);
+        $entityManager->flush();
+        $this->addFlash(
+            'notice',
+            'Ta langue a bien été supprimée'
+        );
 
         return $this->redirectToRoute('app_admin_language_index', [], Response::HTTP_SEE_OTHER);
     }

@@ -1,33 +1,27 @@
-.block {
+.container-edit-user {
     display: flex;
-    flex-direction: row;
+    flex-direction:column;
     justify-content: center;
-}
-
-.container-work {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     width: 60rem;
-    height: 62rem;
-    margin-top: 10rem;
-    margin-bottom: 15rem;
+    height: 85rem;
     border-radius: 50px;
     box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
     background-image: url('../../images/backgroundflowers.jpg');
     background-size: cover;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
-.h1-works {
+.h1-user {
     font-family: var(--title);
     font-size: 5rem;
-    padding-top: 2rem;
     display:flex;
     justify-content: center;
     align-items: center;
 }
 
-input#work_title {
+input#user_email {
     width: 30rem;
     height: 4rem;
     border-radius: 50px;
@@ -41,10 +35,10 @@ input#work_title {
     font-family: var(--text);
 }
 
-input#work_description {
+select#user_roles {
     width: 30rem;
-    height: 20rem;
-    border-radius: 50px;
+    height: 5rem;
+    border-radius: 30px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 2rem;
     border: none;
@@ -54,7 +48,7 @@ input#work_description {
     font-family: var(--text);
  }
 
-input#work_github {
+input#user_phonenumber {
     width: 30rem;
     height: 4rem;
     border-radius: 50px;
@@ -67,8 +61,46 @@ input#work_github {
     font-family: var(--text);
 }
 
+input#user_localisation {
+    width: 30rem;
+    height: 4rem;
+    border-radius: 50px;
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
+    font-size: 2rem;
+    border: none;
+    background-color: var(--rose);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: var(--text);
+}
 
-button#work_submit {
+input#user_description {
+    width: 30rem;
+    height: 20rem;
+    border-radius: 50px;
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
+    font-size: 2rem;
+    border: none;
+    background-color: var(--rose);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: var(--text);
+}
+
+input#user_job {
+    width: 30rem;
+    height: 4rem;
+    border-radius: 50px;
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
+    font-size: 2rem;
+    border: none;
+    background-color: var(--rose);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: var(--text);
+}
+
+button#user_submit {
     margin-left:8rem;
     border-radius: 50px;
     width: 15rem;

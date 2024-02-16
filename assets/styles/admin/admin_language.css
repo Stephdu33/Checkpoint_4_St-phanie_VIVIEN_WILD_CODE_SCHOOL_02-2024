@@ -1,4 +1,4 @@
-.h1-works-list {
+.h1-languages-list {
     font-family: var(--title);
     font-size: 5rem;
     margin-top: 3rem;
@@ -6,14 +6,14 @@
     justify-content: center;
 }
 
-.block-work-button {
+.block-language-button {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 2rem;
 }
 
-.new-work-link {
+.new-language-link {
     border-radius: 50px;
     background-color: var(--jaune);
     box-shadow: 0.2rem 0.2rem 0.4rem var(--fushia);
@@ -43,12 +43,12 @@
     text-align: center;
 } 
 
-.table-works-block {
+.table-languages-block {
     display: flex;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
-    width: 125rem;
+    width: 30rem;
     padding: 1rem;
     height: auto;
     align-items: center;
@@ -59,24 +59,25 @@
     background-color: var(--rose);
 }
 
-.table-works {
-    border-spacing: 5px;
+.table-languages {
+    border-spacing: 15px;
 }
 
-.th-works {
+.th-languages {
     background-color: white;
     border-radius: 30px;
     vertical-align: middle;
-    padding:5px;
+    padding:10px;
     font-family: var(--text);
     font-size: 1.5rem;
+    max-width: 10rem;
 }
 
-.tr-works {
+.tr-languages {
     text-align: center;
     background-color: white;
     border-radius: 30px;
-    padding:5px;
+    padding:10px;
     font-family: var(--text);
     font-size: 1.5rem;
 }

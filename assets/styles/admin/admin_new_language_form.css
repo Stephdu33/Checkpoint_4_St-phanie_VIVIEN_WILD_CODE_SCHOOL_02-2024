@@ -1,15 +1,9 @@
-.block {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.container-work {
+.container-language {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 60rem;
-    height: 62rem;
+    height: 40rem;
     margin-top: 10rem;
     margin-bottom: 15rem;
     border-radius: 50px;
@@ -18,7 +12,7 @@
     background-size: cover;
 }
 
-.h1-works {
+.h1-languages {
     font-family: var(--title);
     font-size: 5rem;
     padding-top: 2rem;
@@ -27,7 +21,7 @@
     align-items: center;
 }
 
-input#work_title {
+input#language_name {
     width: 30rem;
     height: 4rem;
     border-radius: 50px;
@@ -41,20 +35,7 @@ input#work_title {
     font-family: var(--text);
 }
 
-input#work_description {
-    width: 30rem;
-    height: 20rem;
-    border-radius: 50px;
-    box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
-    font-size: 2rem;
-    border: none;
-    background-color: var(--rose);
-    text-align: center;
-    margin-bottom: 3rem;
-    font-family: var(--text);
- }
-
-input#work_github {
+input#language_level {
     width: 30rem;
     height: 4rem;
     border-radius: 50px;
@@ -65,10 +46,9 @@ input#work_github {
     text-align: center;
     margin-bottom: 3rem;
     font-family: var(--text);
-}
+ }
 
-
-button#work_submit {
+button#language_submit {
     margin-left:8rem;
     border-radius: 50px;
     width: 15rem;
@@ -94,6 +74,7 @@ button#work_submit {
     height: 2rem;
     background-color: var(--jaune);
     box-shadow: 0.2rem 0.2rem 0.4rem var(--fushia);
+    margin-top: 3.5rem;
     font-family: var(--text);
     font-size: 1rem;
     border: none; 

@@ -11,8 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
-#[Route('/experience', name: 'app_admin_experience_')]
+// This controller show experiences with a list //
+#[Route('admin/experience', name: 'app_admin_experience_')]
 class ExperienceController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
@@ -23,59 +23,64 @@ class ExperienceController extends AbstractController
         ]);
     }
 
+    // This controller add experiences with a form //
     #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $experience = new Experience();
-        $form = $this->createForm(ExperienceType::class, $experience);
-        $form->handleRequest($request);
+        $formExperience = $this->createForm(ExperienceType::class, $experience);
+        $formExperience->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($formExperience->isSubmitted() && $formExperience->isValid()) {
             $entityManager->persist($experience);
             $entityManager->flush();
+            $this->addFlash(
+                'notice',
+                'Ta nouvelle expérience professionnelle a été enregistrée'
+            );
 
             return $this->redirectToRoute('app_admin_experience_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('admin/experience/new.html.twig', [
             'experience' => $experience,
-            'form' => $form,
+            'formExperience' => $formExperience->createView(),
         ]);
     }
 
-    #[Route('/{id}', name: 'show', methods: ['GET'])]
-    public function show(Experience $experience): Response
-    {
-        return $this->render('admin/experience/show.html.twig', [
-            'experience' => $experience,
-        ]);
-    }
-
+    // This controller update experiences with a form //
     #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Experience $experience, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(ExperienceType::class, $experience);
-        $form->handleRequest($request);
+        $formExperience = $this->createForm(ExperienceType::class, $experience);
+        $formExperience->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($formExperience->isSubmitted() && $formExperience->isValid()) {
             $entityManager->flush();
+            $this->addFlash(
+                'notice',
+                'Ton expérience professionnelle a été mise à jour'
+            );
 
             return $this->redirectToRoute('app_admin_experience_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('admin/experience/edit.html.twig', [
+        return $this->render('admin/experience/new.html.twig', [
             'experience' => $experience,
-            'form' => $form,
+            'formExperience' => $formExperience->createView(),
         ]);
     }
 
-    #[Route('/{id}', name: 'delete', methods: ['POST'])]
+    // This controller delete experiences //
+    #[Route('/{id}', name: 'delete', methods: ['GET'])]
     public function delete(Request $request, Experience $experience, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $experience->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($experience);
-            $entityManager->flush();
-        }
+        $entityManager->remove($experience);
+        $entityManager->flush();
+        $this->addFlash(
+            'notice',
+            'Cette expérience professionnelle a bien été supprimée'
+        );
 
         return $this->redirectToRoute('app_admin_experience_index', [], Response::HTTP_SEE_OTHER);
     }

@@ -22,7 +22,8 @@ class UserFixtures extends Fixture
             ->setPhonenumber('0606060606')
             ->setlocalisation('Chémoi')
             ->setDescription('J\'aime le chocolat, le rose, les repas en famille et entre amis, danser, rire, faire du vélo...blablablablablabla')
-            ->setJob('Responsable du Bonheur');
+            ->setJob('Responsable du Bonheur')
+            ->setRoles(['ROLE_ADMIN']);
         $manager->persist($user);
         $manager->flush();
     }

@@ -68,14 +68,14 @@ class WorkController extends AbstractController
             return $this->redirectToRoute('app_admin_work_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('admin/work/edit.html.twig', [
+        return $this->render('admin/work/new.html.twig', [
             'work' => $work,
             'formWork' => $formWork->createView(),
         ]);
     }
 
     // This controller delete works //
-    #[Route('/{id}', name: 'delete', methods: ['POST'])]
+    #[Route('/{id}', name: 'delete', methods: ['GET'])]
     public function delete(Work $work, EntityManagerInterface $entityManager): Response
     {
         $entityManager->remove($work);
