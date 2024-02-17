@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 // This controller show educations with a list //
-#[Route('admin/education', name: 'app_admin_education_')]
+#[Route('/admin/education', name: 'app_admin_education_')]
 class EducationController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]

@@ -6,13 +6,14 @@ use App\Entity\Skill;
 use App\Form\SkillType;
 use App\Repository\SkillRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Knp\Component\Pager\PaginatorInterface;
 
-#[Route('/skill', name: 'app_admin_skill_')]
+#[Route('/admin/skill', name: 'app_admin_skill_')]
 class SkillController extends AbstractController
 {
     // This controller show skills with a list //
@@ -22,14 +23,36 @@ class SkillController extends AbstractController
         PaginatorInterface $paginator,
         Request $request
     ): Response {
+
+        // barre de recherche par nom de skill //
+        $formSearch = $this->createFormBuilder(null, [
+            'method' => 'get'
+        ])
+            ->add('search', SearchType::class, [
+                'label' => false,
+                'attr' => [
+                    'placeholder' => 'Rechercher par nom'
+                ]
+            ])
+            ->getForm();
+        $formSearch->handleRequest($request);
+        if ($formSearch->isSubmitted() && $formSearch->isValid()) {
+            $search = $formSearch->get('search')->getData();
+            $query = $skillRepository->findLikeName($search);
+        } else {
+            $query = $skillRepository->queryFindAll();
+        }
+
+        // pagination //
         $pagination = $paginator->paginate(
-            $skillRepository->queryFindAll(),
+            $query,
             $request->query->getInt('page', 1), /*page number*/
             10 /*limit per page*/
         );
 
         return $this->render('admin/skill/index.html.twig', [
             'skills' => $pagination,
+            'formSearch' => $formSearch,
         ]);
     }
 

@@ -26,6 +26,14 @@ class SkillRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('s')->orderBy('s.category', 'ASC')->getQuery();
     }
 
+    public function findLikeName(string $search): array
+    {
+        return $this->createQueryBuilder('s')
+            ->andWhere('s.name LIKE :search')
+            ->setParameter('search', '%' . $search . '%')
+            ->getQuery()
+            ->getResult();
+    }
     //    /**
     //     * @return Skill[] Returns an array of Skill objects
     //     */

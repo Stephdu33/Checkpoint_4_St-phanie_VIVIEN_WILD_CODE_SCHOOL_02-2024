@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 // This controller show users with a list //
-#[Route('admin/user', name: 'app_admin_user_')]
+#[Route('/admin/user', name: 'app_admin_user_')]
 class UserController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]

@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 // This controller show languages with a list //
-#[Route('/language', name: 'app_admin_language_')]
+#[Route('/admin/language', name: 'app_admin_language_')]
 class LanguageController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]

@@ -14,6 +14,8 @@
 @import 'admin_new_education_form.css';
 @import 'admin_user.css';
 @import 'admin_edit_user_form.css';
+@import 'admin_image.css';
+@import 'admin_new_image_form.css';
 
 body {
     background-color: var(--rosepale);

@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/image', name: 'app_admin_image_')]
+#[Route('/admin/image', name: 'app_admin_image_')]
 class ImageController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
@@ -26,55 +26,56 @@ class ImageController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $image = new Image();
-        $form = $this->createForm(ImageType::class, $image);
-        $form->handleRequest($request);
+        $formImage = $this->createForm(ImageType::class, $image);
+        $formImage->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($formImage->isSubmitted() && $formImage->isValid()) {
             $entityManager->persist($image);
             $entityManager->flush();
-
+            $this->addFlash(
+                'notice',
+                'Ta nouvelle photo a été enregistrée'
+            );
             return $this->redirectToRoute('app_admin_image_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('admin/image/new.html.twig', [
             'image' => $image,
-            'form' => $form,
-        ]);
-    }
-
-    #[Route('/{id}', name: 'show', methods: ['GET'])]
-    public function show(Image $image): Response
-    {
-        return $this->render('admin/image/show.html.twig', [
-            'image' => $image,
+            'formImage' => $formImage,
         ]);
     }
 
     #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Image $image, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(ImageType::class, $image);
-        $form->handleRequest($request);
+        $formImage = $this->createForm(ImageType::class, $image);
+        $formImage->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($formImage->isSubmitted() && $formImage->isValid()) {
             $entityManager->flush();
 
+            $this->addFlash(
+                'notice',
+                'Ta photo a été mise à jour'
+            );
             return $this->redirectToRoute('app_admin_image_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('admin/image/edit.html.twig', [
             'image' => $image,
-            'form' => $form,
+            'formImage' => $formImage,
         ]);
     }
 
-    #[Route('/{id}', name: 'delete', methods: ['POST'])]
-    public function delete(Request $request, Image $image, EntityManagerInterface $entityManager): Response
+    #[Route('/{id}', name: 'delete', methods: ['GET'])]
+    public function delete(Image $image, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $image->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($image);
-            $entityManager->flush();
-        }
+        $entityManager->remove($image);
+        $entityManager->flush();
+        $this->addFlash(
+            'notice',
+            'Cette image a bien été supprimée'
+        );
 
         return $this->redirectToRoute('app_admin_image_index', [], Response::HTTP_SEE_OTHER);
     }

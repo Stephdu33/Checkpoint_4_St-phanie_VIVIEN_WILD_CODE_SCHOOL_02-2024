@@ -29,3 +29,7 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+##> symfony/bundle/vish upload ###
+/public/uploads/images/photo/
+##< symfony/bundle/vish upload ###

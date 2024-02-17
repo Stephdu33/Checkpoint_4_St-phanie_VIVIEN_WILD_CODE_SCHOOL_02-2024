@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 // This controller show experiences with a list //
-#[Route('admin/experience', name: 'app_admin_experience_')]
+#[Route('/admin/experience', name: 'app_admin_experience_')]
 class ExperienceController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
