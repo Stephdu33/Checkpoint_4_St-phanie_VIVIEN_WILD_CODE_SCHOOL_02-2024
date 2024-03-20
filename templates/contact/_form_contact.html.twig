@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	- Contact
+{% endblock %}
+
+{% block body %}
+	<div class="block">
+		<div class="container-contact">
+			<h1 class="h1-form-contact">Contactez-moi</h1>
+			<div class="form-contact-block">
+				{{ form_start(form) }}
+				<div class="form-contact-firstname">{{ form_row(form.firstname) }}</div>
+				<div class="form-contact-lastname">{{ form_row(form.lastname) }}</div>
+				<div class="form-contact-email">{{ form_row(form.email) }}</div>
+				<div class="form-contact-phonenumber">{{ form_row(form.phonenumber) }}</div>
+				<div class="form-contact-message">{{ form_row(form.message) }}</div>
+				<div class="form-contact-company">{{ form_row(form.company) }}</div>
+				<div class="form-contact-job">{{ form_row(form.job) }}</div>
+				<div class="button#contact_submit">{{ form_row(form.submit) }}</div>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,7 +1,7 @@
-main {
+.block-form-new-image {
     margin-inline:auto;   
-    width: 50rem;
-    height: 40rem;
+    width: 70rem;
+    height: 30rem;
     margin-top: 10rem;
     margin-bottom: 15rem;
     border-radius: 50px;
@@ -23,6 +23,22 @@ main {
     text-align: center;
 }
 
+label.required {
+    font-size: 1.5rem;
+    font-family: var(--text);
+    color: var(--black);
+    margin-right: 10px;
+}
+
+select#image_work {
+    font-size: 1.5rem;
+    border: none;
+    width: 30rem;
+    height: 2rem;
+    border-radius: 20px;
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
+}
+
 input#image_photoFile_file {
     width: 30rem;
     height: 2rem;
@@ -33,7 +49,9 @@ input#image_photoFile_file {
     background-color: var(--rose);
     margin-bottom: 2rem;
     margin-top: 2rem;
+    margin-left: 8rem;
     font-family: var(--text);
+
 }
 
 button.btn {
@@ -43,28 +61,31 @@ button.btn {
     background-color: var(--jaune);
     box-shadow: 0.2rem 0.2rem 0.4rem var(--fushia);
     margin-top: 2rem;
-    margin-left:10rem;
+    margin-left:15rem;
     font-family: var(--text);
     font-size: 1.5rem;
     border: none;
     text-align: center;
 }
 
-.link-come-back-button {
+.link-come-back-button-new-image {
     text-decoration: none;
     color: var(--black);
     font-size: 1rem;
+    font-family: var(--text);
 }
 
-.link-come-back {
+.link-come-back-new-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     border-radius: 50px;
     width: 6rem;
     height: 2rem;
     background-color: var(--jaune);
     box-shadow: 0.2rem 0.2rem 0.4rem var(--fushia);
     margin-top: 3.5rem;
-    font-family: var(--text);
-    font-size: 1rem;
     border: none; 
-    margin-left: 22rem;
+    margin-left: 30rem;
 }

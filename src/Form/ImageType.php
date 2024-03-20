@@ -17,12 +17,20 @@ class ImageType extends AbstractType
         $builder
             ->add('work', EntityType::class, [
                 'class' => Work::class,
-                'choice_label' => 'id',
+                'choice_label' => 'title',
+                'label' => 'Choisis ton projet'
             ])
             ->add('photoFile', VichFileType::class, [
                 'required'      => false,
-                'allow_delete'  => true, // not mandatory, default is true
-                'download_uri' => true, // not mandatory, default is true
+                'allow_delete'  => true,
+                'download_uri' => true,
+                'label' => false,
+                'label_attr' => [
+                    'class' => 'load_image_work'
+                ],
+                'attr' => [
+                    'placeholder' => 'Enregistre un screen'
+                ]
             ]);
     }
 

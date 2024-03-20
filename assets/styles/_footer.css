@@ -1,6 +1,9 @@
+/* desktop */
 .footer-bloc {
     display:flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--fushia);
 }
@@ -29,4 +32,11 @@ margin-left: 3rem;
     font-family: var(--text);
     text-decoration: none;
     color: var(--black);
+}
+
+#map {
+    height:150px;
+    width: 200px;
+    margin-bottom: 2rem;
+    border-radius: 50%;
 }

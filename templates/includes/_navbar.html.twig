@@ -15,22 +15,22 @@
 							<a href="{{ path('app_home')}}" class="text-menu">Accueil</a>
 						</li>
 						<li>
-							<a href="#Qui suis-je" class="text-menu">Qui suis-je?</a>
+							<a href="{{ path('app_home')}}#Qui suis-je?" class="text-menu">Qui suis-je?</a>
 						</li>
 						<li>
-							<a href="#Mes skills" class="text-menu">Mes skills</a>
+							<a href="{{ path('app_home')}}#Mes skills" class="text-menu">Mes skills</a>
 						</li>
 						<li>
-							<a href="#Mon expérience professionnelle" class="text-menu">Mon expérience professionnelle</a>
+							<a href="{{ path('app_home')}}#Mon expérience professionnelle" class="text-menu">Mon expérience professionnelle</a>
 						</li>
 						<li>
-							<a href="#Mes projets" class="text-menu">Mes projets</a>
+							<a href="{{ path('app_home')}}#Mes projets" class="text-menu">Mes projets</a>
 						</li>
 						<li>
-							<a href="#Mes formations" class="text-menu">Mes formations</a>
+							<a href="{{ path('app_home')}}#Mes formations" class="text-menu">Mes formations</a>
 						</li>
 						<li>
-							<a href="#Contactez-moi" class="text-menu">Contactez-moi</a>
+							<a href="{{ path('app_contact') }}" class="text-menu">Contactez-moi</a>
 						</li>
 						{% if app.user  %}
 							<li>

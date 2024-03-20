@@ -1,3 +1,4 @@
+/* desktop */
 .uk-navbar {
     display: flex;
     justify-content: space-around;
@@ -45,4 +46,3 @@
     box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
     border-radius: 50px;
 }
-

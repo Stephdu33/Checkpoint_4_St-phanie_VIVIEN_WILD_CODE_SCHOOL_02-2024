@@ -5,11 +5,11 @@
 @import '_navbar.css';
 @import '_footer.css';
 @import 'security.css';
-
+@import 'form_contact.css';
 
 
 body {
-    background-color: var(--rosepale);
+    background: linear-gradient(#f0eafc, #FFFFFF);
 }
 
 * {

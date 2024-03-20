@@ -1,7 +1,19 @@
-.h1-image-list {
+.image-list-block {
+    margin-inline:auto;   
+    width: 70rem;
+    height: auto;
+    margin-top: 10rem;
+    margin-bottom: 15rem;
+    border-radius: 50px;
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
+    background-image: url('../../images/backgroundflowers.jpg');
+    background-size: cover;
+}
+
+h1.h1-image-list {
     font-family: var(--title);
     font-size: 5rem;
-    margin-top: 3rem;
+    padding-top: 2rem;
     display:flex;
     justify-content: center;
 }
@@ -24,13 +36,13 @@
     padding: 10px;
 }
 
-.link-come-back-button {
+.link-come-back-button-image {
     text-decoration: none;
     color: var(--black);
     font-size: 1rem;
 }
 
-.link-come-back {
+.link-come-back-image {
     border-radius: 50px;
     width: 10rem;
     height: 2rem;
@@ -48,7 +60,7 @@
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
-    width: 125rem;
+    width: 65rem;
     padding: 1rem;
     height: auto;
     align-items: center;

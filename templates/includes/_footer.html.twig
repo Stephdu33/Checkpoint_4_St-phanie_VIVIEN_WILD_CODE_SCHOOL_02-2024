@@ -7,7 +7,26 @@
 
 	<div class="localisation-footer-bloc">
 		<h3 class="h3-footer-1">Localisation:</h3>
-		<h3 class="h3-footer-2">Libourne</h3>
+		<div id="map">
+
+			{% block stylesheets %}
+				<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+			{% endblock %}
+			{% block javascripts %}
+				<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+				<script>
+					var map = L.map('map').setView([
+44.916672, -0.23333
+], 18);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+maxZoom: 19,
+minZoom: 5,
+attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+var marker = L.marker([44.916672, -0.23333]).addTo(map);
+				</script>
+			{% endblock %}
+		</div>
 	</div>
 
 	<div class="social-footer-bloc">
@@ -21,7 +40,7 @@
 		<h3 class="h3-footer-1">A propos de ce site:</h3>
 		<h3 class="h3-footer-2">PHP, Symfony, Twig, ...</h3>
 	</div>
-
+	<a href="{{ path('app_contact') }}" class="h3-footer-1">Contact</a>
 	<a href="#" class="btn btn-default">Retour en haut ↑</a>
 	<div class="">
 		<a href="{{ path('app_home') }}" class="home-footer">

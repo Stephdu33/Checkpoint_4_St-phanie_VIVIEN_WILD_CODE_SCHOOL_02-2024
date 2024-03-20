@@ -2,10 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\ImageRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ImageRepository;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints\DateTime;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 #[ORM\Entity(repositoryClass: ImageRepository::class)]
 #[Vich\Uploadable]
@@ -16,22 +20,17 @@ class Image
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 500)]
+    #[ORM\Column(type: 'string', length: 500, nullable: true)]
     private ?string $photo = null;
 
-    #[Vich\UploadableField(mapping: 'photo_file', fileNameProperty: 'photo')]
-     private ?File $photoFile = null;
+    #[Vich\UploadableField(mapping: 'photo_images', fileNameProperty: 'photo')]
+    #[Assert\File(
+        maxSize: '1M',
+        mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],
+    )]
+    private ?File $photoFile = null;
 
-     public function setPhotoFile(File $picture = null): Image
-    {
-        $this->photoFile = $picture;
-        return $this;
-    }
-
-    public function getPhotoFile(): ?File
-    {
-        return $this->photoFile;
-    }
+    private ?DateTime $updatedAt = null;
 
     #[ORM\ManyToOne(inversedBy: 'image')]
     private ?Work $work = null;
@@ -53,6 +52,18 @@ class Image
         return $this;
     }
 
+    public function getupdatedAt(): ?string
+    {
+        return $this->updatedAt;
+    }
+
+    public function setupdatedAt(string $updatedAt): static
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
     public function getWork(): ?Work
     {
         return $this->work;
@@ -63,5 +74,19 @@ class Image
         $this->work = $work;
 
         return $this;
+    }
+
+    public function setPhotoFile(File $screen = null): Image
+    {
+        $this->photoFile = $screen;
+        if ($screen) {
+            $this->updatedAt = new DateTime('now');
+        }
+        return $this;
+    }
+
+    public function getPhotoFile(): ?File
+    {
+        return $this->photoFile;
     }
 }

@@ -2,15 +2,19 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 
+#[UniqueEntity('email')]
 #[ORM\Entity(repositoryClass: UserRepository::class)]
+#[UniqueEntity(fields: ['email'], message: 'Il y a déjà un compte avec cette adresse email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
 
@@ -20,6 +24,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
+    #[Assert\Length(min: 2, max: 180)]
+    #[Assert\Email()]
     private ?string $email = null;
 
     #[ORM\Column]
