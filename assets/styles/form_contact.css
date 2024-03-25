@@ -30,7 +30,7 @@
 input#contact_firstname {
     width: 40rem;
     height: 4rem;
-    border-radius: 50px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 1.5rem;
     border: none;
@@ -44,7 +44,7 @@ input#contact_firstname {
 input#contact_lastname {
     width: 40rem;
     height: 4rem;
-    border-radius: 50px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 1.5rem;
     border: none;
@@ -58,7 +58,7 @@ input#contact_lastname {
 input#contact_email {
     width: 40rem;
     height: 4rem;
-    border-radius: 50px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 1.5rem;
     border: none;
@@ -72,7 +72,7 @@ input#contact_email {
 input#contact_phonenumber {
     width: 40rem;
     height: 4rem;
-    border-radius: 50px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 1.5rem;
     border: none;
@@ -86,7 +86,7 @@ input#contact_phonenumber {
 textarea#contact_message {
     width: 40rem;
     height: 20rem;
-    border-radius: 50px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 1.5rem;
     border: none;
@@ -101,7 +101,7 @@ textarea#contact_message {
 input#contact_company {
     width: 40rem;
     height: 4rem;
-    border-radius: 50px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 1.5rem;
     border: none;
@@ -115,7 +115,7 @@ input#contact_company {
 input#contact_job {
     width: 40rem;
     height: 4rem;
-    border-radius: 50px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 1.5rem;
     border: none;

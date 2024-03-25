@@ -61,12 +61,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Skill::class)]
     private Collection $skill;
 
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Recommendation::class)]
+    private Collection $recommendations;
+
     public function __construct()
     {
         $this->meeting = new ArrayCollection();
         $this->education = new ArrayCollection();
         $this->language = new ArrayCollection();
         $this->skill = new ArrayCollection();
+        $this->recommendations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -303,6 +307,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setRoles(array $roles): static
     {
         $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Recommendation>
+     */
+    public function getRecommendations(): Collection
+    {
+        return $this->recommendations;
+    }
+
+    public function addRecommendation(Recommendation $recommendation): static
+    {
+        if (!$this->recommendations->contains($recommendation)) {
+            $this->recommendations->add($recommendation);
+            $recommendation->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRecommendation(Recommendation $recommendation): static
+    {
+        if ($this->recommendations->removeElement($recommendation)) {
+            // set the owning side to null (unless already changed)
+            if ($recommendation->getUser() === $this) {
+                $recommendation->setUser(null);
+            }
+        }
 
         return $this;
     }

@@ -50,7 +50,7 @@
 .skill-home-bloc {
     display:grid;
     justify-items: center;
-    width: 100rem;
+    width: 150rem;
     margin-bottom: 5rem;
     border-radius: 50px;
     box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
@@ -105,13 +105,12 @@
     opacity: 0.7;
     border-radius: 8px;
     margin: 2rem;
-    gap: 5px;
     text-align: center;
     height: 6rem;
     width: auto;
     color:var(--black);
     font-size: 2rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 /* block experiences */
@@ -119,7 +118,7 @@
     display:grid;
     justify-items: center;
     width:150rem;
-    height: 120rem;
+    height: 100rem;
     margin-bottom: 5rem;
     border-radius: 50px;
     box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
@@ -139,7 +138,7 @@
 .table-experiences-home {
     border-spacing: 10px;
     width: 100rem;
-    height: 90rem;
+    height: 80rem;
 }
 
 .th-experiences-home {
@@ -170,7 +169,7 @@
 .work-home-bloc {
     display:grid;
     justify-items: center;
-    width: auto;
+    width: 200rem;
     height: auto;
     padding: 2rem;
     margin-bottom: 3rem;
@@ -223,7 +222,7 @@
 .education-home-bloc {
     display:grid;
     justify-items: center;
-    width: auto;
+    width: 150rem;
     height: auto;
     padding: 2rem;
     margin-bottom: 3rem;
@@ -247,6 +246,7 @@
     width: 90rem;
     height: 80rem;
 }
+
 .th-educations-home {
     border-radius: 8px;
     vertical-align: middle;
@@ -259,6 +259,39 @@
 }
 
 .tr-educations-home {
+    text-align: center;
+    background-color: var(--jaune);
+    border-radius: 8px;
+    padding:10px;
+    font-family: var(--text);
+    font-size: 2rem;
+    opacity: 0.7;
+    font-weight: bold;
+    color:var(--black);
+}
+
+/* recommendations */
+.recommendation-home-bloc {
+    display:grid;
+    justify-items: center;
+    width: 100rem;
+    height: auto;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 50px;
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
+    background-image: url('../images/backgroundflowers.jpg');
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.table-recommendations-home {
+    border-spacing: 10px;
+    width: 60rem;
+    height: 40rem;
+}
+
+.tr-recommendations {
     text-align: center;
     background-color: var(--jaune);
     border-radius: 8px;
