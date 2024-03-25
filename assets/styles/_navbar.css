@@ -41,8 +41,9 @@
 
 .avatar {
     margin-top: 3rem;
-    max-width: 100px;
-    max-height: 100px;
-    box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
-    border-radius: 50px;
+    margin-bottom: 3rem;
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 0.3rem 0.3rem 0.5rem var(--fushia);
 }

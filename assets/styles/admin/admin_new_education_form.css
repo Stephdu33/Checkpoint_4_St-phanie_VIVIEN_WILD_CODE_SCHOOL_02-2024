@@ -22,7 +22,7 @@
 input#education_title {
     width: 30rem;
     height: 4rem;
-    border-radius: 50px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 2rem;
     border: none;
@@ -36,7 +36,7 @@ input#education_title {
 input#education_year {
     width: 30rem;
     height: 4rem;
-    border-radius: 50px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 2rem;
     border: none;
@@ -50,7 +50,7 @@ input#education_year {
 input#education_school {
     width: 30rem;
     height: 4rem;
-    border-radius: 50px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 2rem;
     border: none;
@@ -64,7 +64,7 @@ input#education_school {
 input#education_description {
     width: 30rem;
     height: 4rem;
-    border-radius: 50px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 2rem;
     border: none;

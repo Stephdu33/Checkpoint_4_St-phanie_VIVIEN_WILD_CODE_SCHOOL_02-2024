@@ -39,7 +39,7 @@ justify-content: center;
 .form-control {
     width: 40rem;
     height: 4rem;
-    border-radius: 50px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 2rem;
     border: none;

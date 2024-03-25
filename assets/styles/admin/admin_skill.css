@@ -91,7 +91,7 @@ input#form_search {
     margin-bottom: 10rem;
     border-radius: 30px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
-    background-color: var(--rose);
+    background-color: var(--jaune);
 }
 
 .table-skills {
@@ -101,21 +101,21 @@ input#form_search {
     border-spacing: 0.2rem;
     font-family: var(--text);
     font-size: 1.5rem;
-    border-radius: 30px;
+    border-radius: 8px;
     border-spacing: 8px;
 }
 
 .th-skills {
     text-align: center;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 8px;
     vertical-align: middle;
 }
 
 .tr-skills {
     text-align: center;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 8px;
 }
 
 .pagination-skill-index {

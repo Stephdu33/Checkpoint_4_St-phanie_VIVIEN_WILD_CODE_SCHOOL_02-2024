@@ -24,7 +24,7 @@
 input#language_name {
     width: 30rem;
     height: 4rem;
-    border-radius: 50px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 2rem;
     border: none;
@@ -38,7 +38,7 @@ input#language_name {
 input#language_level {
     width: 30rem;
     height: 4rem;
-    border-radius: 50px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
     font-size: 2rem;
     border: none;

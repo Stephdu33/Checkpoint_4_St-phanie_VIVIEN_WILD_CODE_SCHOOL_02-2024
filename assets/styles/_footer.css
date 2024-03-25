@@ -28,10 +28,18 @@
 margin-left: 3rem;
 }
 
+.moncv-home {
+    font-family: var(--title);
+    color: var(--black);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
 .btn.btn-default {
     font-family: var(--text);
     text-decoration: none;
     color: var(--black);
+    font-size: 2rem;
 }
 
 #map {

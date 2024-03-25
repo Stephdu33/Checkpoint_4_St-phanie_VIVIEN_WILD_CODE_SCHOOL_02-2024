@@ -56,7 +56,7 @@
     margin-bottom: 10rem;
     border-radius: 30px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
-    background-color: var(--rose);
+    background-color: var(--jaune);
 }
 
 .table-languages {
@@ -65,7 +65,7 @@
 
 .th-languages {
     background-color: white;
-    border-radius: 30px;
+    border-radius: 8px;
     vertical-align: middle;
     padding:10px;
     font-family: var(--text);
@@ -76,7 +76,7 @@
 .tr-languages {
     text-align: center;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 8px;
     padding:10px;
     font-family: var(--text);
     font-size: 1.5rem;

@@ -9,7 +9,7 @@
     font-family: var(--title);
     font-size: 4rem;
     margin-top: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     font-weight: bold;
     display: flex;
     justify-content: space-around;
@@ -17,41 +17,40 @@
 
 .h3-home {
     font-family: var(--title);
-    font-size: 3rem;
+    font-size: 4rem;
     margin-top: 0;
     display: flex;
     justify-content: space-around;
 }
 
+/* about me */
 .about-me-home {
     display: flex;
     flex-direction: column;
-    width: 60rem;
+    width: 150rem;
     height: auto;
     margin-top: 5rem;
     margin-bottom: 5rem;
     border-radius: 50px;
     box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
     background-color: var(--rose);
-    background-image: url('../images/backgroundflowers.jpg');
-    background-size: cover;
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 .description-user-home {
     font-family: var(--text);
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--black);
     text-align: center;
     font-weight: bold;
+    margin-bottom: 5rem;
 }
 
-.hardskill-home-bloc {
-    display: flex;
-    justify-content:space-between;
-    flex-direction: column;
-    width: 80rem;
-    height: 60rem;
+/* block skills & languages */
+.skill-home-bloc {
+    display:grid;
+    justify-items: center;
+    width: 100rem;
     margin-bottom: 5rem;
     border-radius: 50px;
     box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
@@ -60,6 +59,7 @@
     opacity: 0.7;
 }
 
+/* block languages */
 .language-home-bloc {
     width: 30rem;
     height: 20rem;
@@ -70,24 +70,56 @@
     margin-bottom: 2rem;
 }
 
-.softskill-home-bloc {
-    display: flex;
-    justify-content: center;
-    width: 80rem;
-    height: 60rem;
-    margin-bottom: 5rem;
-    border-radius: 50px;
-    box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
-    background-image: url('../images/backgroundflowers.jpg');
-    background-size: cover;
-    opacity: 0.7;
+.table-languages-home {
+    margin: auto;
 }
 
+.th-languages-home {
+    background-color: white;
+    border-radius: 8px;
+    vertical-align: middle;
+    padding:10px;
+    font-family: var(--text);
+    font-size: 2rem;
+    max-width: 10rem;
+}
+
+.tr-languages-home {
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    padding:10px;
+    font-family: var(--text);
+    font-size: 2rem;
+}
+
+/* block skills */
+.bloc-skill {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin:2rem;
+}
+
+.block-skills {
+    background-color: #ffcf4e;
+    opacity: 0.7;
+    border-radius: 8px;
+    margin: 2rem;
+    gap: 5px;
+    text-align: center;
+    height: 6rem;
+    width: auto;
+    color:var(--black);
+    font-size: 2rem;
+    padding-top: 2rem;
+}
+
+/* block experiences */
 .experience-home-bloc {
-    display: flex;
-    justify-content: center;
-    width: 80rem;
-    height: 60rem;
+    display:grid;
+    justify-items: center;
+    width:150rem;
+    height: 120rem;
     margin-bottom: 5rem;
     border-radius: 50px;
     box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
@@ -96,11 +128,48 @@
     opacity: 0.7;
 }
 
+.table-experiences-block-home {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.table-experiences-home {
+    border-spacing: 10px;
+    width: 100rem;
+    height: 90rem;
+}
+
+.th-experiences-home {
+    background-color: var(--jaune);
+    border-radius: 8px;
+    vertical-align: middle;
+    padding:10px;
+    font-family: var(--text);
+    font-size: 2rem;
+    opacity: 0.7;
+    font-weight: bold;
+    color:var(--black);
+}
+
+.tr-experiences-home {
+    text-align: center;
+    background-color: var(--jaune);
+    border-radius: 8px;
+    padding:10px;
+    font-family: var(--text);
+    font-size: 2rem;
+    opacity: 0.7;
+    font-weight: bold;
+    color:var(--black);
+}
+
+/* block works */
 .work-home-bloc {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
+    display:grid;
+    justify-items: center;
     width: auto;
     height: auto;
     padding: 2rem;
@@ -112,18 +181,48 @@
     opacity: 0.7;
 }
 
-.table-works-block {
-    margin-top: 0;
-    margin-bottom: 0;
-    width: auto;
-    height: auto;
+.table-works-block-home {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    border-radius: 8px;
 }
 
+.table-works-home {
+    border-spacing: 10px;
+    width: 150rem;
+    height: 90rem;
+}
+
+.th-works-home {
+    background-color: var(--jaune);
+    border-radius: 8px;
+    vertical-align: middle;
+    padding:10px;
+    font-family: var(--text);
+    font-size: 2rem;
+    opacity: 0.7;
+    font-weight: bold;
+    color:var(--black);
+}
+
+.tr-works-home {
+    text-align: center;
+    background-color: var(--jaune);
+    border-radius: 8px;
+    padding:10px;
+    font-family: var(--text);
+    font-size: 2rem;
+    opacity: 0.7;
+    font-weight: bold;
+    color:var(--black);
+}
+
+/* block education */
 .education-home-bloc {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
+    display:grid;
+    justify-items: center;
     width: auto;
     height: auto;
     padding: 2rem;
@@ -135,25 +234,40 @@
     opacity: 0.7;
 }
 
-
-.table-educations-block {
-    margin-top: 2rem;
-    margin-bottom: 0;
-    width: auto;
-    height: auto;
+.table-educations-block-home {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    border-radius: 8px;
 }
 
-.contact-home-bloc {
-    display: flex;
-    justify-content: center;
-    width: 80rem;
-    height: 60rem;
-    margin-bottom: 5rem;
-    border-radius: 50px;
-    box-shadow: 0.2rem 0.2rem 0.5rem var(--jaune);
-    background-image: url('../images/backgroundflowers.jpg');
-    background-size: cover;
+.table-educations-home {
+    border-spacing: 10px;
+    width: 90rem;
+    height: 80rem;
+}
+.th-educations-home {
+    border-radius: 8px;
+    vertical-align: middle;
+    padding:10px;
+    font-family: var(--text);
+    font-size: 2rem;
     opacity: 0.7;
+    font-weight: bold;
+    color:var(--black);
+}
+
+.tr-educations-home {
+    text-align: center;
+    background-color: var(--jaune);
+    border-radius: 8px;
+    padding:10px;
+    font-family: var(--text);
+    font-size: 2rem;
+    opacity: 0.7;
+    font-weight: bold;
+    color:var(--black);
 }
 
 /* responsive mobil 

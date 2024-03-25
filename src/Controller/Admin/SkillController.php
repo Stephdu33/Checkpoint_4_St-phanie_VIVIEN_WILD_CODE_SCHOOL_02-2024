@@ -24,7 +24,7 @@ class SkillController extends AbstractController
         Request $request
     ): Response {
 
-        // barre de recherche par nom de skill //
+        // search bar by skill's name //
         $formSearch = $this->createFormBuilder(null, [
             'method' => 'get'
         ])

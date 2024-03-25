@@ -54,9 +54,9 @@
     align-items: center;
     margin-top: 5rem;
     margin-bottom: 10rem;
-    border-radius: 30px;
+    border-radius: 8px;
     box-shadow: 0.2rem 0.2rem 0.4rem var(--jaune);
-    background-color: var(--rose);
+    background-color: var(--jaune);
 }
 
 .table-works {
@@ -65,7 +65,7 @@
 
 .th-works {
     background-color: white;
-    border-radius: 30px;
+    border-radius: 8px;
     vertical-align: middle;
     padding:5px;
     font-family: var(--text);
@@ -75,7 +75,7 @@
 .tr-works {
     text-align: center;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 8px;
     padding:5px;
     font-family: var(--text);
     font-size: 1.5rem;
